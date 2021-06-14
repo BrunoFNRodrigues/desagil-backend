@@ -17,47 +17,47 @@ class TrackTest {
 
 	@Test
 	void testZeroSeconds() {
-		assertEquals("0:00", new Track(artista1,nome,0).getDurationString);
+		assertEquals("0:00", new Track(artista1,nome,0).getDurationString());
 	}
 
 	@Test
 	void testFiveSeconds() {
-		assertEquals(true, new Track(artista1,nome,5).getDurationString);
+		assertEquals("0:05", new Track(artista1,nome,5).getDurationString());
 	}
 
 	@Test
 	void testTwentyFiveSeconds() {
-		assertEquals(true, new Track(artista1,nome,25).getDurationString);
+		assertEquals("0:25", new Track(artista1,nome,25).getDurationString());
 	}
 
 	@Test
 	void testOneMinuteZeroSeconds() {
-		assertEquals(true, new Track(artista1,nome,60).getDurationString);
+		assertEquals("1:00", new Track(artista1,nome,60).getDurationString());
 	}
 
 	@Test
 	void testOneMinuteFiveSeconds() {
-		assertEquals(true, new Track(artista1,nome,65).getDurationString);
+		assertEquals("1:05", new Track(artista1,nome,65).getDurationString());
 	}
 
 	@Test
 	void testOneMinuteTwentyFiveSeconds() {
-		assertEquals(true, new Track(artista1,nome,85).getDurationString);
+		assertEquals("1:25", new Track(artista1,nome,85).getDurationString());
 	}
 
 	@Test
 	void testTwoMinutesZeroSeconds() {
-		assertEquals(true, new Track(artista1,nome,120).getDurationString);
+		assertEquals("2:00", new Track(artista1,nome,120).getDurationString());
 	}
 
 	@Test
 	void testTwoMinutesFiveSeconds() {
-		assertEquals(true, new Track(artista1,nome,125).getDurationString);
+		assertEquals("2:05", new Track(artista1,nome,125).getDurationString());
 	}
 
 	@Test
 	void testTwoMinutesTwentyFiveSeconds() {
-		assertEquals(true, new Track(artista1,nome,145).getDurationString);
+		assertEquals("2:25", new Track(artista1,nome,145).getDurationString());
 	}
 
 	@Test
@@ -67,6 +67,6 @@ class TrackTest {
 
 	@Test
 	void testTwoCollaborators() {
-		assertEquals("Anitta (feat. Becky G)", new CollaborationTrack(artista2,"vem pro play",180,["Becky G"]).getFullArtisitName());
+		assertEquals("Anitta (feat. Ludmilla, Snoop Dog)", new CollaborationTrack(artista2,"vem pro play",180,["Ludmilla", "Snoop Dog"]).getFullArtisitName());
 	}
 }
