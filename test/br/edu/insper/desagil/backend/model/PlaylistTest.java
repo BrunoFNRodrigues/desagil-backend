@@ -7,28 +7,43 @@ import org.junit.jupiter.api.Test;
 
 class PlaylistTest {
 	private static double DELTA = 0.000001;
-
+	private Playlist playlist;
 	@BeforeEach
 	void setUp() {
+		playlist = new Playlist(01);
 	}
 
 	@Test
 	void testRoundDownToZero() {
-		assertEquals(true, false);
+		playlist.putRating("Jonathan",1);
+		playlist.putRating("Joseph",2);
+		playlist.putRating("Jotaro",3);
+		playlist.putRating("Josuke",3);
+		assertEquals(2.0, playlist.averageRatings());
 	}
 
 	@Test
 	void testRoundUpToHalf() {
-		assertEquals(true, false);
+		playlist.putRating("Jonathan",1);
+		playlist.putRating("Joseph",2);
+		playlist.putRating("Jotaro",1);
+		assertEquals(1.5, playlist.averageRatings());
 	}
 
 	@Test
 	void testRoundDownToHalf() {
-		assertEquals(true, false);
+		playlist.putRating("Jonathan",1);
+		playlist.putRating("Joseph",2);
+		playlist.putRating("Jotaro",2);
+		assertEquals(1.5, playlist.averageRatings());
 	}
 
 	@Test
 	void testRoundUpToOne() {
-		assertEquals(true, false);
+		playlist.putRating("Jonathan",1);
+		playlist.putRating("Joseph",1);
+		playlist.putRating("Jotaro",2);
+		playlist.putRating("Josuke",3);
+		assertEquals(2.0, playlist.averageRatings());
 	}
 }
