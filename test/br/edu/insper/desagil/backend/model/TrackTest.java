@@ -2,6 +2,9 @@ package br.edu.insper.desagil.backend.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -62,11 +65,16 @@ class TrackTest {
 
 	@Test
 	void testOneCollaborator() {
-		assertEquals("Anitta (feat. Becky G)", new CollaborationTrack(artista2,"tua cara",180,["Becky G"]).getFullArtisitName());
+		List<Artist> colabs = new ArrayList<>();
+		colabs.add(new Artist("Becky G"));
+		assertEquals("Anitta (feat. Becky G)", new CollaborationTrack(artista2,"tua cara",180,colabs).getFullArtistName());
 	}
 
 	@Test
 	void testTwoCollaborators() {
-		assertEquals("Anitta (feat. Ludmilla, Snoop Dog)", new CollaborationTrack(artista2,"vem pro play",180,["Ludmilla", "Snoop Dog"]).getFullArtisitName());
+		List<Artist> colabs = new ArrayList<>();
+		colabs.add(new Artist("Ludmilla"));
+		colabs.add(new Artist("Snoop Dog"));
+		assertEquals("Anitta (feat. Ludmilla, Snoop Dog)", new CollaborationTrack(artista2,"vem pro play",180,colabs).getFullArtistName());
 	}
 }
